@@ -15,10 +15,10 @@ class UniverSpider(scrapy.Spider):
 
     def parse_info(self, response):
 
-        try:
-            code = response.css('p.bg-nd__pre a::text').getall()[0].split(' ')[-1][1:-1]
-        except IndexError:
-            code = ''
+        # try:
+        #     code = response.css('p.bg-nd__pre a::text').getall()[0].split(' ')[-1][1:-1]
+        # except IndexError:
+        #     code = ''
 
         try:
             universe = response.css('a.violet-link-nd::text').get()
@@ -45,12 +45,12 @@ class UniverSpider(scrapy.Spider):
         except IndexError:
             details = []
 
-        try:
-            specialnost = response.css('div.bg-nd__main h1::text').get().split(':')[0]
-        except IndexError:
-            specialnost = ''
+        # try:
+        #     specialnost = response.css('div.bg-nd__main h1::text').get().split(':')[0]
+        # except IndexError:
+        #     specialnost = ''
 
         yield {
-            code: [universe, name, specialnost, details],
-            specialnost: [universe, name, details]
+            # code: [universe, name, specialnost, details],
+            name: [universe, name, details]
         }

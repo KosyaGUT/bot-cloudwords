@@ -6,7 +6,7 @@ from formating import univer_dict
 from wordcloud import WordCloud, STOPWORDS
 from io import BytesIO
 from random import randrange
-from aiogram.types import InlineKeyboardButton, InlineKeyboardMarkup
+
 
 bot = Bot(TOKEN_API)
 dp = Dispatcher(bot)
@@ -16,7 +16,7 @@ emoji_good = ['✨', '🌟', '🎉', '👑']
 
 @dp.message_handler(commands=['start'])
 async def send_welcome(message: types.Message):
-    await bot.send_message(message.chat.id, "Напишите название направления или его код")
+    await bot.send_message(message.chat.id, "Напишите название направления 😊")
 
 
 @dp.message_handler()
